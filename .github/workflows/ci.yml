@@ -1,0 +1,22 @@
+name: CI Pipeline  # Name of your workflow
+
+# Events that trigger this workflow
+on:
+  push:
+    branches:
+      - main    # Run the workflow whenever code is pushed to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # The environment where the job runs (Ubuntu server)
+    
+    steps:
+      - name: Checkout code    # First step: checkout the code from the repository
+        uses: actions/checkout@v2
+
+      - name: Run a sample command   # Example step: run any command
+        run: echo "Running GitHub Actions!"  # This prints a message
+
+      - name: Install dependencies (example)    # Install dependencies for a project
+        run: sudo apt-get install -y [your-software]
+
